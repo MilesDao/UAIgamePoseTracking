@@ -12,16 +12,7 @@ class PoseDetector:
         min_detection_confidence=0.5,
         min_tracking_confidence=0.5,
     ):
-        """
-        Khởi tạo bộ nhận dạng pose của Mediapipe.
 
-        Parameters:
-        - static_image_mode: True nếu xử lý ảnh tĩnh, False nếu video
-        - model_complexity: 0/1/2 (1 là mặc định)
-        - smooth_landmarks: làm mượt landmark giữa các frame
-        - min_detection_confidence: ngưỡng tin cậy phát hiện ban đầu
-        - min_tracking_confidence: ngưỡng tin cậy theo dõi giữa các frame
-        """
         self.mpDraw = mp.solutions.drawing_utils
         self.mpPose = mp.solutions.pose
         self.pose = self.mpPose.Pose(
@@ -109,7 +100,6 @@ class PoseDetector:
         return min(xs), min(ys), max(xs), max(ys)
 
 
-# # Demo nhanh khi chạy độc lập
 # if __name__ == "__main__":
 #     cap = cv2.VideoCapture(0)
 #     detector = PoseDetector()
